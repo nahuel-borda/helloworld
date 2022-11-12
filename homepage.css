@@ -1,0 +1,133 @@
+* {
+    font-family: Oxygen,monospace;
+    box-sizing: border-box;
+}
+
+.feather-16{
+    width: 16px;
+    height: 16px;
+}
+
+#website-wrapper {
+    background-color: #1d1f21;
+    color: #c9cacc;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    overflow-wrap: break-word;
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+    box-sizing: border-box;
+    padding-top: 32px;
+    hyphens: auto;
+    max-width: 1000px;
+}
+
+summary {
+    padding-top: 5rem;
+}
+
+h1 {
+    color: #2f9ed1;
+    font-weight: 600;
+}
+
+h4 {
+    color: #666;
+}
+
+body {
+    height: 100%;
+    background-color: #1d1f21 !important;
+    color: #c9cacc;
+    font-display: swap;
+    font-weight: 400;
+    font-size: 14px;
+    font-family: Oxygen,monospace;
+    line-height: 1.725;
+    text-rendering: geometricPrecision;
+    flex: 1;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    max-width: 72rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    margin: 0 auto;
+}
+
+body a {
+    color: #c9cacc;
+    text-decoration: none;
+}
+
+#website-header h1 {
+    font-weight: lighter; 
+}
+
+#website-content h1 {
+    font-size:x-large;
+}
+
+#website-header span{
+    display: inline-block;
+}
+
+code .inline {
+    overflow-x: auto;
+    font-size: 13px;
+    font-family: Oxygen,monospace;
+    line-height: 22px;
+    padding: 0 5px;
+    background: #212326;
+    border: 1px dotted #666;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.column {
+    width: 33%;
+    padding: 10px;
+    height: 50%;
+    float: left;
+}
+
+@media (min-width: 320px) and (max-width: 600px) {
+    #cols .column {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .column {
+        text-align: center;
+        width: 100%;
+    }
+}
+
+div {
+    display: block;
+}
+
+.about-list {
+    padding-left: 12px;
+}
+
+li {
+    margin-bottom: 3px;
+}
+
+::marker {
+    unicode-bidi: isolate;
+    font-variant-numeric: tabular-nums;
+    text-transform: none;
+    text-indent: 0px !important;
+    text-align: start !important;
+    text-align-last: start !important;
+}
