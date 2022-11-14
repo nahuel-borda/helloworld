@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Nahuel Borda | Personal Website</title>
     <link rel="icon" type="image/png" href="favicon.png" />
-    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
-    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <!--<link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>-->
     <link rel="stylesheet" type="text/css" href="homepage.css" />
     <link href='https://fonts.googleapis.com/css?family=Oxygen+Mono'
       rel='stylesheet'>
@@ -18,73 +18,113 @@
   <body>
     <script
       src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-    <div id="website-wrapper">
-      <div id="website-header" class="">
-        <h1>Nahuel Borda</h1>
-        <h3>Personal Website</h3>
-        <p><span>Uptime:</span>
-          <span style="font-weight: bold;">
-            <py-script>
-              import time
-              from datetime import datetime
+      <div id="website-wrapper">
+        <div id="website-header" class="">
+          <h1>Nahuel Borda</h1>
+          <h4>Personal Website</h4>
+          <p><span>Uptime:</span>
+            <span style="font-weight: bold;" id="days-alive">
+              <!--<py-script>
+                import time
+                from datetime import datetime
 
-              then = datetime(1997, 4, 10, 22, 30)
+                then = datetime(1997, 4, 10, 22, 30)
 
-              now = datetime.now()
-              diff = now - then
-              print(f"{diff.days} days. ")
-            </py-script>
-          </span>
-          <span>Thanks, PyScript!</span>
-          <p>
-      </div>
-          <div id="website-content">
-            <div id="about">
-              <h1>About Me</h1>
-              <div id="content">Hello world! My name is Nahuel Borda and I'm a Software
-                Developer / DevOps Engineer, CS student, and proud protector of
-                Eros, my puppy.
-                I'm from Argentina, living in Córdoba and currently finishing my
-                Master's in CS. <br><br>
-                I have experience on e-commerce, web-development, big-data, back
-                end development, data engineering, and DevOps engineering.
+                now = datetime.now()
+                diff = now - then
+                print(f"{diff.days} days. ")
+              </py-script>-->
+            </span>
+            <span>days.</span>
+            <script>
+                var oneDay = 24*60*60*1000; // hours*minutes*seconds*milliseconds
+                var firstDate = new Date(1997,04,10);
+                var secondDate = new Date();
+                var diffDays = Math.round(Math.abs((firstDate.getTime() - secondDate.getTime())/(oneDay)));
+
+                document.getElementById("days-alive").innerHTML = diffDays;
+              </script>
+            <p>
+        </div>
+        <div id="website-content">
+          <div id="about">
+            <h1>About Me</h1>
+            <div id="content">Hello world! My name is Nahuel Borda and I'm a Software
+              Developer / DevOps Engineer, CS student, and proud protector of
+              Eros, my puppy.
+              I'm from Argentina, living in Córdoba and currently finishing my
+              Master's in CS. <br><br>
+              I have experience on e-commerce, web-development, big-data, back
+              end development, data engineering, and DevOps engineering.
+              <br><br>
+              You can find me on <a
+                href="https://github.com/nahuel-borda" target="_blank" style='font-weight:bold;'><i
+                  class="feather-16" data-feather="github"></i> Github</a> or
+              <a
+                href="https://www.linkedin.com/in/nahuel-borda"
+                target="_blank" style='font-weight:bold;'><i class="feather-16" data-feather="linkedin"></i>
+                LinkedIn</a>
                 <br><br>
-                You can find me on <a
-                  href="https://github.com/nahuel-borda" target="_blank"><i
-                    class="feather-16" data-feather="github"></i> Github</a> or
-                <a
-                  href="https://www.linkedin.com/in/nahuel-borda"
-                  target="_blank"><i class="feather-16" data-feather="linkedin"></i>
-                  LinkedIn</a>
-                  <br><br>
-                And my <span style="font-weight: bold;">cv</span> is available <a style="font-weight: bold; color: lightskyblue" href="https://docs.google.com/document/d/1914DByIzjXFg9UWGrTW859zckwSrT-w5gC2-SOvbL4Q/edit?usp=share_link">here!</a>  
-              </div>
-              <div id="summary">
-                <div id="cols" class="row">
-                  <div class="column">
-                    <h2><i class="feather-16" data-feather="activity"
-                        style="color: green"></i> Life so far...</h2><ul
-                      class="about-list"><li>Up since 1997 (see current
-                        day-count above)</li><li>Started
-                        coding in 2012</li><li>Started
-                        studying CS in 2014</li><li>Got my first job in 2015</li><li>Got
-                        Bachelors in 2022</li></ul></div><div class="column"><h2><i
-                        class="feather-16" data-feather="heart" style="color:
-                        red"></i> Passionate about...</h2><ul
-                      class="about-list"><li>Science</li><li>Coding</li><li>Books</li><li>Weight
-                        Lifting</li><li>Music</li></ul></div><div
-                    class="column"><h2><i class="feather-16" data-feather="sun"
-                        style="color: yellow"></i> Thinking
-                      about...</h2><ul class="about-list"><li>DevOps Culture</li><li>Scalable
-                        Systems</li><li>CI/CD</li><li>Cloud-Native Applications</li></ul></div></div>
-              </div>
+              And my <span style="font-weight: bold;">cv</span> is available <a style="font-weight: bold; color: lightskyblue" href="https://docs.google.com/document/d/1914DByIzjXFg9UWGrTW859zckwSrT-w5gC2-SOvbL4Q/edit?usp=share_link">here!</a>  
             </div>
+            <div id="summary">
+              <div id="cols" class="row">
+                <div class="column">
+                  <h2><i class="feather-16" data-feather="activity"
+                      style="color: green"></i> Life so far...</h2><ul
+                    class="about-list"><li>Up since 1997 (see current
+                      day-count above)</li><li>Started
+                      coding in 2012</li><li>Started
+                      studying CS in 2014</li><li>Got my first job in 2015</li><li>Got
+                      Bachelors in 2022</li></ul></div><div class="column"><h2><i
+                      class="feather-16" data-feather="heart" style="color:
+                      red"></i> Passionate about...</h2><ul
+                    class="about-list"><li>Science</li><li>Coding</li><li>Books</li><li>Weight
+                      Lifting</li><li>Music</li></ul></div><div
+                  class="column"><h2><i class="feather-16" data-feather="sun"
+                      style="color: yellow"></i> Thinking
+                    about...</h2><ul class="about-list"><li>DevOps Culture</li><li>Scalable
+                      Systems</li><li>CI/CD</li><li>Cloud-Native Applications</li></ul></div></div>
+            </div>
+          </div>
+          <div id="projects">
+            <h1>Projects</h1>
+            <div id='projects-list'>
+              
+            </div>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+            <script>
+              user = 'nahuel-borda'
+              apirepo = `https://api.github.com/users/${user}`
+              
+              listrepos = document.createElement('ul')
+              document.getElementById('projects-list').appendChild(listrepos)
+              $.getJSON(apirepo + '/repos?sort=updated&direction=desc', function (data) {
+                
+                data.filter(v => v.name !== 'nahuel-borda.github.io').forEach(v => {
+                  listItemRepo = document.createElement('li')
+                  listrepos.appendChild(listItemRepo)
+                  hlink = document.createElement('a')
+
+                  listItemRepo.appendChild(hlink)
+                  hlink.textContent = `${v.name.charAt(0).toUpperCase() + v.name.slice(1)}`
+
+                  description = document.createElement('span')
+                  listItemRepo.appendChild(description)
+
+                  description.textContent = `${v.description}`
+
+                  hlink.href = v.html_url
+                })
+              })
+            </script>
+          </div>
           </div>
           <div id="website-footer">
             <h1>Contact Me</h1>
             You can contact me through <a
               href="https://www.linkedin.com/in/nahuel-borda"
-              target="_blank"><i class="feather-16" data-feather="linkedin"></i>
+              target="_blank" style='font-weight:bold;'><i class="feather-16" data-feather="linkedin"></i>
               LinkedIn</a>
             as well as on my mail address <span style="font-weight: bold;">bordanah@gmail.com</span>
           </div>

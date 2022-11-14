@@ -24,8 +24,14 @@
     max-width: 1000px;
 }
 
-summary {
-    padding-top: 5rem;
+#summary {
+    padding-top: 2rem;
+}
+
+#projects a {
+    font-weight: bold;
+    margin-right: 1rem;
+    font-size: 1rem;
 }
 
 h1 {
