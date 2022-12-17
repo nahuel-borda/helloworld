@@ -150,7 +150,8 @@ li {
 
 #right_block_book {
     padding-left: 5mm;
-    max-width: 400px;
+    max-width: 30%;
+    width: 100%;
     max-height: 140px;
     overflow-y: hidden;
 }
@@ -179,9 +180,15 @@ li {
 
 #left_block_book {
     vertical-align: top;
+    max-width: 70%;
 }
 
 #books-list li {
     list-style-type: none;
     margin-bottom: 2mm;
+}
+
+#books-list ul {
+    margin: 0;
+    padding: 0;
 }
