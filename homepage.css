@@ -137,3 +137,51 @@ li {
     text-align: start !important;
     text-align-last: start !important;
 }
+
+#books-list img {
+    width: 100px;
+    height: 140px;
+    vertical-align: top;
+}
+
+#books-list #left_block_book, #books-list #right_block_book{
+    display: inline-block;
+}
+
+#right_block_book {
+    padding-left: 5mm;
+    max-width: 400px;
+    max-height: 140px;
+    overflow-y: hidden;
+}
+#right_block_book h2 {
+    font-size: 4mm;
+    padding: 0;
+    margin: 0;
+}
+
+#right_block_book h3 {
+    font-size: 3mm;
+    padding: 0;
+    margin: 0;
+}
+
+#right_block_book p {
+    font-size: 3mm;
+    padding: 0;
+    margin: 0;
+}
+
+#books-list {
+    max-height: 30em;
+    overflow-y: scroll;
+}
+
+#left_block_book {
+    vertical-align: top;
+}
+
+#books-list li {
+    list-style-type: none;
+    margin-bottom: 2mm;
+}

@@ -16,6 +16,7 @@
     <link rel="manifest" href="/site.webmanifest">
   </head>
   <body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
       <div id="website-wrapper">
@@ -24,16 +25,6 @@
           <h4>Personal Website</h4>
           <p><span>Uptime:</span>
             <span style="font-weight: bold;" id="days-alive">
-              <!--<py-script>
-                import time
-                from datetime import datetime
-
-                then = datetime(1997, 4, 10, 22, 30)
-
-                now = datetime.now()
-                diff = now - then
-                print(f"{diff.days} days. ")
-              </py-script>-->
             </span>
             <span>days.</span>
             <script>
@@ -50,12 +41,11 @@
           <div id="about">
             <h1>About Me</h1>
             <div id="content">Hello world! My name is Nahuel Borda and I'm a Software
-              Developer / DevOps Engineer, CS student, and proud protector of
+              Developer / DevOps Engineer, CS Master's student at FaMAF, and proud protector of
               Eros, my puppy.
-              I'm from Argentina, living in Córdoba and currently finishing my
-              Master's in CS. <br><br>
+              I'm from Argentina, living in Córdoba.<br><br>
               I have experience on e-commerce, web-development, big-data, back
-              end development, data engineering, and DevOps engineering.
+              end development, data engineering, and DevOps / Platform Engineering.
               <br><br>
               You can find me on <a
                 href="https://github.com/nahuel-borda" target="_blank" style='font-weight:bold;'><i
@@ -75,8 +65,8 @@
                     class="about-list"><li>Up since 1997 (see current
                       day-count above)</li><li>Started
                       coding in 2012</li><li>Started
-                      studying CS in 2014</li><li>Got my first job in 2015</li><li>Got
-                      Bachelors in 2022</li></ul></div><div class="column"><h2><i
+                      studying CS in 2014</li><li>Got my first job in 2015</li><li>Got CS
+                      Bachelor in 2022</li></ul></div><div class="column"><h2><i
                       class="feather-16" data-feather="heart" style="color:
                       red"></i> Passionate about...</h2><ul
                     class="about-list"><li>Science</li><li>Coding</li><li>Books</li><li>Weight
@@ -84,7 +74,7 @@
                   class="column"><h2><i class="feather-16" data-feather="sun"
                       style="color: yellow"></i> Thinking
                     about...</h2><ul class="about-list"><li>DevOps Culture</li><li>Scalable
-                      Systems</li><li>CI/CD</li><li>Cloud-Native Applications</li></ul></div></div>
+                      Systems</li><li>CI/CD</li><li>Cloud-Native Applications</li><li>Chat bots integrations</li></ul></div></div>
             </div>
           </div>
           <div id="projects">
@@ -92,7 +82,6 @@
             <div id='projects-list'>
               
             </div>
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
             <script>
               user = 'nahuel-borda'
               apirepo = `https://api.github.com/users/${user}`
@@ -119,6 +108,68 @@
               })
             </script>
           </div>
+          <div id="books">
+            <h1>CS books in my shelf.</h1>
+            <div id='books-list'>
+              
+            </div>
+            <script>
+
+            const API_KEY = 'AIzaSyBm1t1KaSZBmh0caYOXD8VCP9EToebNJqs';
+
+
+            const SHEET_ID = '1l8BSjCC4flI1KYfMqX3SIHG5T67xXtRYQyxsEWLx90s';
+
+            const SHEET_NAME = 'cs-books';
+
+            const RANGE = 'A2:E14';
+
+            var url = 'https://sheets.googleapis.com/v4/spreadsheets/' +
+              SHEET_ID + '/values/' + RANGE +
+              '?alt=json&key=' + API_KEY;
+
+            listbooks = document.createElement('ul');
+            document.getElementById('books-list').appendChild(listbooks);
+            $.getJSON(url, function (databooks) {
+              
+              databooks.values.forEach(v => {
+                listItemBooks = document.createElement('li')
+                
+                left_block = document.createElement('div')
+                left_block.setAttribute("id", "left_block_book");
+                right_block = document.createElement('div')
+                right_block.setAttribute("id", "right_block_book");
+                
+                listItemBooks.appendChild(left_block)
+                listItemBooks.appendChild(right_block)
+
+                listbooks.appendChild(listItemBooks)
+
+                img = document.createElement('img')
+                left_block.appendChild(img)
+                img.src = v[4]
+                
+                book_hlink_title = document.createElement('h2')
+                bookhlink = document.createElement('a')
+                book_hlink_title.appendChild(bookhlink) 
+
+                right_block.appendChild(book_hlink_title)
+                bookhlink.textContent = v[0]
+                
+                author = document.createElement('h3')
+                right_block.appendChild(author)
+
+                author.textContent = v[1]
+
+                bookdescription = document.createElement('p')
+                right_block.appendChild(bookdescription)
+
+                bookdescription.textContent = v[2]
+
+                bookhlink.href = v[3]
+              })
+            })
+            </script>
           </div>
           <div id="website-footer">
             <h1>Contact Me</h1>
