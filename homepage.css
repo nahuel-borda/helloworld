@@ -200,6 +200,9 @@ li {
     border-radius: 0.25rem;
     margin-right: auto;
     margin-left: auto;
+    -moz-box-shadow: 0 0 20px #2f9ed1;
+    -webkit-box-shadow: 0 0 20px #2f9ed1;
+    box-shadow: 0 0 20px #2f9ed1;
 }
 
 #highlight-project .div1:hover {
