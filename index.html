@@ -131,7 +131,7 @@
               document.getElementById('projects-list').appendChild(listrepos)
               $.getJSON(apirepo + '/repos?sort=updated&direction=desc', function (data) {
                 
-                data.filter(v => v.name !== 'nahuel-borda.github.io').forEach(v => {
+                data.filter(v => v.name !== 'nahuel-borda.github.io' && v.name !== 'nahuel-borda').forEach(v => {
                   listItemRepo = document.createElement('li')
                   listrepos.appendChild(listItemRepo)
                   hlink = document.createElement('a')
