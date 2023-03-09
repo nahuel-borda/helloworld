@@ -9,7 +9,7 @@ I have +6 years of experience as Full Stack Developer using HTML, CSS, Javascrip
 
 #### Contact Me
 You can contact me through [LinkedIn](https://www.linkedin.com/in/nahuel-borda)
-as well as on my [Email](https://www.linkedin.com/in/nahuel-borda)
+as well as by [email](bordanah@gmail.com)
 
  
 
