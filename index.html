@@ -31,7 +31,9 @@
       src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
       <div id="website-wrapper">
         <div id="website-header" class="">
-          <h1>Nahuel Borda</h1>
+          
+          <div class="website-metadata">
+            <h1>Nahuel Borda</h1>
           <h4>Software Engineer / Computer Scientist</h4>
           <p><span>Uptime:</span>
             <span style="font-weight: bold;" id="days-alive">
@@ -46,6 +48,38 @@
                 document.getElementById("days-alive").innerHTML = diffDays;
               </script>
             <p>
+          </div>
+          <div class="website-welcome-image" id="welcome-image">
+            <a href="" id="welcome-image-link"></a>
+
+          </div>
+          <script>
+            fetch("https://api.nasa.gov/planetary/apod?api_key=dBgrha8uMSIFCvaOVfOxYPZgwT1iw4c1NaWF5eby")
+            .then(response => response.json())
+            .then(data => {
+              const imageUrl = data.url;
+              const imageTitle = data.title;
+              //const imageExplanation = data.explanation;
+              const imageContainer = document.createElement("div");
+              imageContainer.id = 'image-box'
+              const destination = document.getElementById("welcome-image-link");
+              const imageElement = document.createElement("img");
+              const titleElement = document.createElement("p");
+              const imageTextContainer = document.createElement("div");
+              imageTextContainer.id = "image-text"
+              imageElement.src = imageUrl;
+              destination.href = imageUrl;
+              imageElement.alt = imageTitle;
+              titleElement.textContent = "Today's NASA's APOD: ".concat(imageTitle);
+              //explanationElement.textContent = imageExplanation;
+              imageContainer.appendChild(imageElement);
+              imageContainer.appendChild(titleElement);
+              imageTextContainer.appendChild(titleElement);
+              imageContainer.appendChild(imageTextContainer);
+              destination.appendChild(imageContainer);
+            })
+            .catch(error => console.log(error));
+          </script>
         </div>
         <div id="website-content" style="margin-top: 2rem;">
           <div id="about">

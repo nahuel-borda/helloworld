@@ -317,3 +317,51 @@ line-height: 1;
     padding: 0;
     margin: 0;
 }
+.website-welcome-image img, .website-welcome-image {
+    max-width: 20rem;
+}
+
+@media (min-width: 1024px) { 
+    .website-welcome-image, .website-metadata {
+        display: inline-block;
+        vertical-align: top;
+        margin-right: 2rem;
+    }
+    .website-header div{
+        vertical-align: top;
+    }
+    .website-header span{
+        vertical-align: top;
+    }
+    .website-welcome-image {
+        float: right;
+    }
+    .website-welcome-image {
+        margin-top: 0 !important;
+    }
+}
+
+.website-welcome-image {
+    margin-top: 2rem;
+}
+
+.website-welcome-image #image-box {
+    position: relative;
+}
+.website-welcome-image #image-text p {
+    margin: 0;
+    padding: 1rem;
+    max-width: 100%;
+}
+.website-welcome-image #image-text {
+    z-index: 2rem;
+    position: absolute;
+    color: white;
+    font-weight: bold;
+    left: 0;
+    bottom: 1rem;
+    background: rgba(3, 0, 0, 0.3);
+    /*max-width: 15rem;*/
+    color: #c9cacc; 
+    max-width: 100%;
+}
