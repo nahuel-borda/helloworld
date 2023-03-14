@@ -341,9 +341,6 @@ line-height: 1;
     }
 }
 
-.website-welcome-image {
-    margin-top: 2rem;
-}
 
 .website-welcome-image #image-box {
     position: relative;
@@ -361,7 +358,6 @@ line-height: 1;
     left: 0;
     bottom: 1rem;
     background: rgba(3, 0, 0, 0.3);
-    /*max-width: 15rem;*/
     color: #c9cacc; 
     max-width: 100%;
 }
