@@ -318,7 +318,7 @@ line-height: 1;
     margin: 0;
 }
 .website-welcome-image img, .website-welcome-image {
-    max-width: 20rem;
+    max-width: 18rem;
 }
 
 @media (min-width: 1024px) { 
