@@ -9,7 +9,6 @@
 }
 
 #website-wrapper {
-    background-color: #1d1f21;
     color: #c9cacc;
     position: relative;
     display: flex;
@@ -45,7 +44,6 @@ h4 {
 
 body {
     height: 100%;
-    background-color: #1d1f21 !important;
     color: #c9cacc;
     font-display: swap;
     font-weight: 400;
@@ -365,4 +363,91 @@ line-height: 1;
     background: rgba(3, 0, 0, 0.3);
     color: #c9cacc; 
     max-width: 100%;
+}
+
+:root{
+    --bs-dark: #1d1f21;
+  }
+  
+  .theme-container {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+  }
+  
+  .theme-container:hover {
+    opacity: 0.8;
+  }
+  
+  .shadow-dark {
+    background: linear-gradient(145deg, #23282c, #1e2125);
+    box-shadow: 17px 17px 23px #1a1d20,
+      -17px -17px 23px #282d32, inset 5px 5px 4px #1e2226,
+      inset -5px -5px 4px #24282c;
+  }
+  
+  .shadow-light {
+    box-shadow: 7px 7px 15px -10px #bbcfda, -4px -4px 13px #ffffff,
+      inset 7px 7px 3px rgba(209, 217, 230, 0.35),
+      inset -11px -11px 3px rgba(255, 255, 255, 0.3)
+  }
+  
+  @keyframes change {
+    0% {
+      transform: scale(1);
+    }
+  
+    100% {
+      transform: scale(1.4);
+    }
+  }
+  
+  .change {
+    animation-name: change;
+    animation-duration: 1s;
+    animation-direction: alternate;
+  }
+
+
+.light-theme p, .light-theme span, .light-theme #website-wrapper, .light-theme li {
+    color: #333333 !important;
+}
+
+.light-theme h1, .light-theme h2, .light-theme h3, .light-theme h4{
+    color: black !important;
+} 
+.light-theme li a {
+    color: #2f9ed1;
+}
+.light-theme #highlight-project .div3 {
+    background-color: #f4f2e9;
+}
+
+#image-text p {
+    color: white !important;
+}
+.light-theme body a {
+    color: #2f9ed1 !important;
+}
+
+body a {
+    color: lightskyblue;
+}
+
+body a {
+    color: lightskyblue;
+}
+
+#projects li a {
+    color: #c9cacc;
+}
+#website-header h4 {
+    color: #c9cacc;
 }

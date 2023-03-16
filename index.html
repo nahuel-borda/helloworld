@@ -22,7 +22,6 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-V3GTWTSEMC');
 </script>
   <body>
@@ -31,16 +30,15 @@
       src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
       <div id="website-wrapper">
         <div id="website-header" class="">
-          
           <div class="website-metadata">
             <h1>Nahuel Borda</h1>
-          <h4>Software Engineer / Computer Scientist</h4>
-          <p><span>Uptime:</span>
+            <h4>Software Engineer / Computer Scientist</h4>
+            <p><span>Uptime:</span>
             <span style="font-weight: bold;" id="days-alive">
             </span>
             <span>days.</span>
             <script>
-                var oneDay = 24*60*60*1000; // hours*minutes*seconds*milliseconds
+                var oneDay = 24*60*60*1000; 
                 var firstDate = new Date(1997,04,10);
                 var secondDate = new Date();
                 var diffDays = Math.round(Math.abs((firstDate.getTime() - secondDate.getTime())/(oneDay)));
@@ -80,8 +78,97 @@
             })
             .catch(error => console.log(error));
           </script>
+           <script>
+            function darkMode() {
+              var element = document.body;
+              element.classList.toggle("dark-mode");
+            }
+           </script>
         </div>
         <div id="website-content">
+          <div class="theme-container shadow-dark">
+            <img id="theme-icon" src="https://www.uplooder.net/img/image/2/addf703a24a12d030968858e0879b11e/moon.svg" alt="ERR">
+          </div>
+          <script>
+            function setCookie(name, value, days) {
+              let expires = "";
+              if (days) {
+                let date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+              }
+              document.cookie = name + "=" + value + expires + "; path=/";
+            }
+            function findCookie(e) {
+              let cookies = document.cookie.split(';')
+              cookies.map((cookie, n) => cookie.includes(e) && console.log(decodeURIComponent(cookie), n))
+            }
+            </script>
+          <script>
+            document.body.style="background-color: var(--bs-dark);transition: 0.5s;"
+            const sun = "https://www.uplooder.net/img/image/55/7aa9993fc291bc170abea048589896cf/sun.svg";
+            const moon = "https://www.uplooder.net/img/image/2/addf703a24a12d030968858e0879b11e/moon.svg";
+            const root = document.querySelector(":root");
+            const container = document.getElementsByClassName("theme-container")[0];
+            const themeIcon = document.getElementById("theme-icon");
+            container.addEventListener("click", setTheme);
+
+            var theme = 'dark';
+            if (window.matchMedia && !window.matchMedia('(prefers-color-scheme: dark)').matches) {
+              setLight();
+              theme = "light";
+            } else if (findCookie('nahu-website-theme') == 'light') {
+              setLight();
+              theme = "light";
+            } else if (findCookie('nahu-website-theme') == 'dark') {
+              setDark();
+              theme = "dark";
+            }
+
+              function setTheme() {
+                switch (theme) {
+                  case "dark":
+                    setLight();
+                    theme = "light";
+                    setCookie("nahu-website-theme", theme, 30);
+                    break;
+                  case "light":
+                    setDark();
+                    theme = "dark";
+                    setCookie("nahu-website-theme", theme, 30);
+                    break;
+                }
+                setCookie("nahu-website-theme", theme, 30);
+
+              }
+              function setLight() {
+                root.classList.add("light-theme");
+                root.classList.remove("dark-theme");
+                root.style.setProperty(
+                  "--bs-dark",
+                  "#FFF7E9"
+                );
+                container.classList.remove("shadow-dark");
+                setTimeout(() => {
+                  container.classList.add("shadow-light");
+                  themeIcon.classList.remove("change");
+                }, 300);
+                themeIcon.classList.add("change");
+                themeIcon.src = sun;
+              }
+              function setDark() {
+                root.classList.add("dark-theme");
+                root.classList.remove("light-theme");
+                root.style.setProperty("--bs-dark", "#212529");
+                container.classList.remove("shadow-light");
+                setTimeout(() => {
+                  container.classList.add("shadow-dark");
+                  themeIcon.classList.remove("change");
+                }, 300);
+                themeIcon.classList.add("change");
+                themeIcon.src = moon;
+              }
+          </script>
           <div id="about">
             <h1>About Me</h1>
             <div id="content">Hello world! My name is Nahuel Borda and I'm a Software Engineer, CS Bachelor, and proud protector of Eros, 
@@ -119,7 +206,8 @@
                   class="column"><h2><i class="feather-16" data-feather="sun"
                       style="color: yellow"></i> Thinking
                     about...</h2><ul class="about-list"><li>Parallel Computing</li><li>Scalable
-                      Systems</li><li>DevOps Practices</li><li>Cloud-Native Applications</li><li>Chat bots integrations</li></ul></div></div>
+                      Systems</li><li>DevOps Practices</li><li>Cloud-Native Applications</li><li>Chat bots integrations</li></ul></div>
+                    </div>
             </div>
           </div>
           <div id="highlight-project">
