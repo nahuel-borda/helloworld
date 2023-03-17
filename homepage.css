@@ -347,6 +347,7 @@ line-height: 1;
 
 .website-welcome-image #image-box {
     position: relative;
+    overflow: hidden;
 }
 .website-welcome-image #image-text p {
     margin: 0;
