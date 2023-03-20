@@ -62,15 +62,21 @@
               imageContainer.id = 'image-box'
               const destination = document.getElementById("welcome-image-link");
               const imageElement = document.createElement("img");
+              const videoElement = document.createElement("iframe");
               const titleElement = document.createElement("p");
               const imageTextContainer = document.createElement("div");
               imageTextContainer.id = "image-text"
-              imageElement.src = imageUrl;
+              if (imageUrl.includes('youtube')) {
+                videoElement.src = imageUrl;
+                imageContainer.appendChild(videoElement);
+              } else {
+                imageElement.src = imageUrl;
+                imageElement.alt = imageTitle;
+                imageContainer.appendChild(imageElement);
+              }
               destination.href = imageUrl;
-              imageElement.alt = imageTitle;
               titleElement.textContent = "Today's NASA's APOD: ".concat(imageTitle);
               //explanationElement.textContent = imageExplanation;
-              imageContainer.appendChild(imageElement);
               imageContainer.appendChild(titleElement);
               imageTextContainer.appendChild(titleElement);
               imageContainer.appendChild(imageTextContainer);
