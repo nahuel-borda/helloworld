@@ -96,7 +96,7 @@
         </div>
         <div id="website-content">
           <div class="theme-container shadow-dark">
-            <img id="theme-icon" src="https://www.svgrepo.com/show/79251/crescent-moon.svg" alt="ERR">
+            <span>Dark/Light Mode</span>
           </div>
           <script>
             function setCookie(name, value, days) {
@@ -115,8 +115,8 @@
             </script>
           <script>
             document.body.style="background-color: var(--bs-dark);transition: 0.5s;"
-            const sun = "https://www.svgrepo.com/show/18743/sun.svg";
-            const moon = "https://www.svgrepo.com/show/79251/crescent-moon.svg";
+            const sun = "";
+            const moon = "";
             const root = document.querySelector(":root");
             const container = document.getElementsByClassName("theme-container")[0];
             const themeIcon = document.getElementById("theme-icon");
@@ -163,7 +163,6 @@
                   themeIcon.classList.remove("change");
                 }, 300);
                 themeIcon.classList.add("change");
-                themeIcon.src = sun;
               }
               function setDark() {
                 root.classList.add("dark-theme");
@@ -175,7 +174,6 @@
                   themeIcon.classList.remove("change");
                 }, 300);
                 themeIcon.classList.add("change");
-                themeIcon.src = moon;
               }
           </script>
           <div id="about">
@@ -189,12 +187,11 @@
               <br><br>
               You can find me on <a
                 href="https://github.com/nahuel-borda" target="_blank" style='font-weight:bold;'><i
-                  class="feather-16" data-feather="github"></i> Github</a>,
-              Twitter/X
+                  class="feather-16" data-feather="github"></i> Github</a>, 
               <a
                 href="https://twitter.com/nahuelbytes"
                 target="_blank" style='font-weight:bold;'>
-                LinkedIn</a> or
+                Twitter/X</a> or
               <a
                 href="https://www.linkedin.com/in/nahuel-borda"
                 target="_blank" style='font-weight:bold;'><i class="feather-16" data-feather="linkedin"></i>
