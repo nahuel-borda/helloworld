@@ -34,12 +34,23 @@
 }
 
 h1 {
-    color: #2f9ed1;
+    color: #7fd7ff;
     font-weight: 600;
 }
 
 h4 {
     color: #666;
+}
+
+#website-header {
+    padding: 20px;
+    background-color: #18526d;
+}
+
+#website-header .website-metadata {
+    color: #c9cacc; 
+    font-size: 1rem;
+    line-height: 1.5rem; 
 }
 
 body {
@@ -324,6 +335,10 @@ line-height: 1;
     max-height: 13rem;
 }
 
+#website-header {
+    min-height: 241px;
+}
+
 .website-welcome-image iframe {
     max-height: 13rem;
 }
@@ -332,7 +347,7 @@ line-height: 1;
     .website-welcome-image, .website-metadata {
         display: inline-block;
         vertical-align: top;
-        margin-right: 2rem;
+        
     }
     .website-header div{
         vertical-align: top;

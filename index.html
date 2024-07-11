@@ -11,8 +11,7 @@
     <link href='https://fonts.googleapis.com/css?family=Oxygen+Mono'
       rel='stylesheet'>
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.jpeg">
     <link rel="manifest" href="/site.webmanifest">
     
   </head>
@@ -48,8 +47,9 @@
             <p>
           </div>
           <div class="website-welcome-image" id="welcome-image">
-            <a href="" id="welcome-image-link"></a>
-
+            <a href="" id="welcome-image-link">
+              Loading...
+            </a>
           </div>
           <script>
             fetch("https://api.nasa.gov/planetary/apod?api_key=dBgrha8uMSIFCvaOVfOxYPZgwT1iw4c1NaWF5eby")
@@ -83,7 +83,9 @@
               imageContainer.appendChild(titleElement);
               imageTextContainer.appendChild(titleElement);
               imageContainer.appendChild(imageTextContainer);
+              destination.textContent = "";
               destination.appendChild(imageContainer);
+              
             })
             .catch(error => console.log(error));
           </script>
@@ -95,9 +97,7 @@
            </script>
         </div>
         <div id="website-content">
-          <div class="theme-container shadow-dark">
-            <span>D/L Mode</span>
-          </div>
+          
           <script>
             function setCookie(name, value, days) {
               let expires = "";
@@ -222,7 +222,7 @@
                 </div>
                 <div id="highlight-project">
                   <h1>Highlighted project</h1>
-                  <div class="div1" onclick="window.location.assign('https://little-data-analytics-dashboard-production.up.railway.app/')" style="">
+                  <div class="div1" onclick="window.location.assign('https://github.com/nahuel-borda/little-data-analytics-dashboard')" style="">
                     <div class="div2">
                       <img src="/dashboard.png" alt="Dashboard Caption" style="width: 100%">
                     </div>
@@ -236,12 +236,12 @@
                     <br/>
                     <br/>
                     <span style="color:black;">
-                    To play with the live demo, and some dummy data generated with the help of factory.py, <b style="color: #2f9ed1;">click</b> this banner!
+                    To play with the live demo, and some dummy data generated with the help of factory.py, <b style="color: #2f9ed1;">click</b> here
                     </span> 
                   </p>
                 </div>
                 <div class="div7">
-                  <img class="div8" src="https://drive.google.com/uc?export=view&id=1z-o3zkxppFsisHSBVGeLtVPxFIXV631H" alt="Avatar of Nahuel Borda">
+                  <img class="div8" src="/melogo.jpeg" alt="Avatar of Nahuel Borda">
                   <div class="div9">
                     <p class="div10">Nahuel Borda</p>
                     <p class="div11">Software Engineer</p>
